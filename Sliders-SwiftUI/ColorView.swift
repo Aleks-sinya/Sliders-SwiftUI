@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainRGBView: View {
+struct ColorView: View {
     
     var red: Double
     var green: Double
@@ -15,15 +15,16 @@ struct MainRGBView: View {
     
     var body: some View {
         Color(red: red / 255, green: green / 255, blue: blue / 255)
-            .frame(width: 300, height: 150)
-            .clipShape(Rectangle())
-            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 5))
-            .cornerRadius(15)
+            .cornerRadius(20)
+            .frame(width: 130)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20).stroke(.white, lineWidth: 4)
+            )
     }
 }
 
-struct MainRGBView_Previews: PreviewProvider {
+struct ColorView_Previews: PreviewProvider {
     static var previews: some View {
-        MainRGBView(red: 77, green: 77, blue: 77)
+        ColorView(red: 77, green: 77, blue: 77)
     }
 }

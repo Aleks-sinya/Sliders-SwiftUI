@@ -7,20 +7,22 @@
 
 import SwiftUI
 
-struct TextValueView: View {
+struct TextView: View {
     
-    var textValue: Double
+    var value: Double
     
     var body: some View {
-        Text("\(lround(textValue))")
+        Text("\(lround(value))")
+            .frame(width: 35, alignment: .leading)
             .foregroundColor(.white)
-            .frame(width: 70)
-            .font(.headline)
     }
 }
 
-struct TextValueView_Previews: PreviewProvider {
+struct TextView_Previews: PreviewProvider {
     static var previews: some View {
-        TextValueView(textValue: 255)
+        ZStack {
+            Color.gray
+            TextView(value: 128)
+        }
     }
 }
